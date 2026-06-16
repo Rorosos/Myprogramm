@@ -1,0 +1,173 @@
+.wiki-editor {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: var(--spacing-md);
+}
+
+.wiki-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 2px solid var(--border-color);
+}
+
+.wiki-header h2 {
+  margin: 0;
+  flex: 1;
+}
+
+.wiki-actions {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+.editor-toolbar {
+  display: flex;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md);
+  background-color: var(--color-light);
+  border-radius: var(--border-radius);
+  margin-bottom: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.toolbar-button {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 16px;
+}
+
+.toolbar-button:hover {
+  background-color: var(--color-secondary);
+  color: white;
+  border-color: var(--color-secondary);
+}
+
+.toolbar-button.active {
+  background-color: var(--color-secondary);
+  color: white;
+  border-color: var(--color-secondary);
+}
+
+.editor-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--spacing-md);
+  background-color: white;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  min-height: 300px;
+  font-size: calc(var(--font-size) * 1.1);
+  line-height: 1.8;
+}
+
+.editor-content p {
+  margin-bottom: var(--spacing-md);
+}
+
+.editor-content strong {
+  font-weight: 600;
+}
+
+.editor-content em {
+  font-style: italic;
+}
+
+.editor-content u {
+  text-decoration: underline;
+}
+
+.editor-content a {
+  color: var(--color-link);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.editor-content a:hover {
+  color: var(--color-link-hover);
+  text-decoration: underline;
+}
+
+.image-placeholder {
+  display: inline-block;
+  padding: var(--spacing-md);
+  background-color: rgba(39, 174, 96, 0.1);
+  border: 2px dashed var(--color-success);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  color: var(--color-success);
+  font-weight: 500;
+  transition: all 0.2s;
+  margin: var(--spacing-md) 0;
+}
+
+.image-placeholder:hover {
+  background-color: rgba(39, 174, 96, 0.2);
+}
+
+.image-placeholder img {
+  max-width: 100%;
+  max-height: 500px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+}
+
+.folder-color-box {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border-radius: var(--border-radius);
+  margin-right: var(--spacing-sm);
+  border: 2px solid var(--border-color);
+  cursor: pointer;
+}
+
+.folder-item-with-color {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+/* Text size indicator */
+.text-size-display {
+  padding: 0 var(--spacing-md);
+  min-width: 50px;
+  text-align: center;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  background-color: white;
+  font-size: 12px;
+}
+
+/* Color input container */
+.color-input-container {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: 0 var(--spacing-sm);
+}
+
+.color-input-container input[type="color"] {
+  width: 40px;
+  height: 36px;
+  padding: 2px;
+  cursor: pointer;
+}
+
+.color-label {
+  font-size: 12px;
+  white-space: nowrap;
+}

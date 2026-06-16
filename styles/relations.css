@@ -1,0 +1,211 @@
+.relations-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+.relations-header {
+  padding: var(--spacing-md);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.relations-header h2 {
+  margin: 0;
+  flex: 1;
+}
+
+.relations-canvas-wrapper {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+  background-color: #f9f9f9;
+}
+
+.relations-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Object in graph */
+.graph-object {
+  position: absolute;
+  background-color: white;
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-md);
+  min-width: 150px;
+  max-width: 250px;
+  cursor: grab;
+  user-select: none;
+  transition: all 0.2s;
+  box-shadow: var(--shadow);
+}
+
+.graph-object:hover {
+  border-color: var(--color-secondary);
+  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.2);
+}
+
+.graph-object.dragging {
+  cursor: grabbing;
+  z-index: 100;
+}
+
+.graph-object-title {
+  font-weight: 600;
+  margin-bottom: var(--spacing-sm);
+  word-break: break-word;
+}
+
+.graph-object-description {
+  font-size: 12px;
+  color: #666;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* Pins */
+.object-pins {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.pin-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pin-group.outputs {
+  margin-bottom: var(--spacing-md);
+}
+
+.pin-group.inputs {
+  margin-top: var(--spacing-md);
+  border-top: 1px solid var(--border-color);
+  padding-top: var(--spacing-md);
+}
+
+.pin {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--color-secondary);
+  cursor: crosshair;
+  transition: all 0.2s;
+}
+
+.pin:hover {
+  transform: scale(1.5);
+  background-color: var(--color-link-hover);
+}
+
+.pin.dragging {
+  background-color: var(--color-warning);
+  transform: scale(1.8);
+}
+
+.pin-label {
+  font-size: 11px;
+  flex: 1;
+  margin: 0 var(--spacing-sm);
+}
+
+/* Connection line styles */
+svg.connection-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.connection-line-path {
+  stroke-width: 2;
+  fill: none;
+}
+
+.connection-line-path.soft {
+  stroke-dasharray: 5, 5;
+  stroke-dashoffset: 0;
+}
+
+.connection-line-path.soft-label {
+  font-size: 10px;
+  font-weight: 500;
+}
+
+/* Colors for connection reasons */
+.connection-info { stroke: #999; }
+.connection-ask { stroke: #e91e63; }
+.connection-answer { stroke: #2196f3; }
+.connection-other { stroke: #4caf50; }
+
+/* Eye visibility toggle */
+.visibility-toggle {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--color-secondary);
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  z-index: 50;
+  box-shadow: var(--shadow);
+  transition: all 0.2s;
+}
+
+.visibility-toggle:hover {
+  background-color: var(--color-link-hover);
+  transform: scale(1.1);
+}
+
+/* Relation type management */
+.relation-types-section {
+  margin-top: var(--spacing-md);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--border-color);
+}
+
+.relation-type-item {
+  padding: var(--spacing-sm);
+  background-color: var(--color-light);
+  border-radius: var(--border-radius);
+  margin-bottom: var(--spacing-sm);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.relation-type-name {
+  font-weight: 500;
+}
+
+.relation-type-actions {
+  display: flex;
+  gap: var(--spacing-sm);
+}
+
+.relation-type-action-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+}
