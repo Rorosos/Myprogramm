@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Myprogramm - Documentation & Game Mechanics Manager</title>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/wiki.css">
+    <link rel="stylesheet" href="styles/notes.css">
+    <link rel="stylesheet" href="styles/tasks.css">
+    <link rel="stylesheet" href="styles/mechanics.css">
+    <link rel="stylesheet" href="styles/relations.css">
+    <link rel="stylesheet" href="styles/settings.css">
+</head>
+<body>
+    <!-- Top Menu Bar -->
+    <div class="top-menu">
+        <div class="menu-tabs">
+            <button class="menu-tab active" data-tab="wiki">Wiki</button>
+            <button class="menu-tab" data-tab="notes">Notes</button>
+            <button class="menu-tab" data-tab="tasks">Tasks</button>
+            <button class="menu-tab" data-tab="mechanics">Mechanics</button>
+            <button class="menu-tab" data-tab="relations">Relations</button>
+            <button class="menu-tab" data-tab="hamaynk">Hamaynk</button>
+        </div>
+        <button class="folder-btn" data-tab="folder" title="Assets Manager">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M22 19a2 2 0 0 1-2.414-.643l-6.603-8.657a1 1 0 0 0-1.566 0L2.416 18.357A2 2 0 0 1 0 16V4a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Left Sidebar -->
+        <div class="left-sidebar" id="leftSidebar">
+            <div class="sidebar-search">
+                <input type="text" class="search-input" placeholder="Search..." id="searchInput">
+            </div>
+            <div class="sidebar-content" id="sidebarContent">
+                <!-- Динамически заполняется в зависимости от вкладки -->
+            </div>
+        </div>
+
+        <!-- Main Work Area -->
+        <div class="main-work-area" id="mainWorkArea">
+            <!-- Динамически заполняется контент вкладок -->
+        </div>
+    </div>
+
+    <!-- Color Picker Modal -->
+    <div class="modal" id="colorPickerModal">
+        <div class="modal-content">
+            <h3>Choose Color</h3>
+            <input type="color" id="colorInput" value="#000000">
+            <div class="modal-buttons">
+                <button class="btn-confirm">Confirm</button>
+                <button class="btn-cancel">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Folder Picker Modal -->
+    <div class="modal" id="folderPickerModal">
+        <div class="modal-content">
+            <h3>Select Destination Folder</h3>
+            <div class="search-input-wrapper">
+                <input type="text" class="search-input" placeholder="Search folders..." id="folderSearch">
+            </div>
+            <div class="folder-list" id="folderList"></div>
+            <div class="modal-buttons">
+                <button class="btn-confirm">Confirm</button>
+                <button class="btn-cancel">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Link Picker Modal -->
+    <div class="modal" id="linkPickerModal">
+        <div class="modal-content">
+            <h3>Select Link Target</h3>
+            <div class="search-input-wrapper">
+                <input type="text" class="search-input" placeholder="Search..." id="linkSearch">
+            </div>
+            <div class="link-list" id="linkList"></div>
+            <div class="modal-buttons">
+                <button class="btn-confirm">Confirm</button>
+                <button class="btn-cancel">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Image Preview Modal -->
+    <div class="modal" id="imagePreviewModal">
+        <div class="modal-content fullscreen">
+            <img id="previewImage" alt="Preview">
+            <button class="close-btn">&times;</button>
+        </div>
+    </div>
+
+    <!-- Connection Modal -->
+    <div class="modal" id="connectionModal">
+        <div class="modal-content">
+            <h3 id="connectionTitle">Create Connection</h3>
+            <div class="connection-form">
+                <div class="form-group">
+                    <label>Reason Type:</label>
+                    <select id="connectionReason">
+                        <option value="info">Give info</option>
+                        <option value="ask">Ask info</option>
+                        <option value="answer">Answer</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Connection Type:</label>
+                    <select id="connectionType">
+                        <option value="soft">Soft reference</option>
+                        <option value="cast">Cast</option>
+                        <option value="relation">Relation</option>
+                    </select>
+                </div>
+                <div class="form-group" id="relationTypeGroup" style="display:none;">
+                    <label>Relation Type:</label>
+                    <select id="relationType"></select>
+                </div>
+            </div>
+            <div class="modal-buttons">
+                <button class="btn-confirm">Save</button>
+                <button class="btn-cancel">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/storage.js"></script>
+    <script src="js/state.js"></script>
+    <script src="js/image-processor.js"></script>
+    <script src="js/editor.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/wiki.js"></script>
+    <script src="js/notes.js"></script>
+    <script src="js/tasks.js"></script>
+    <script src="js/mechanics.js"></script>
+    <script src="js/relations.js"></script>
+    <script src="js/settings.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
